@@ -1,0 +1,6 @@
+com\example\demo\controller\Student.class
+com\example\demo\controller\Subject.class
+com\example\demo\controller\StudentRepository.class
+com\example\demo\controller\StudentService.class
+com\example\demo\controller\SchoolSystemManagementApplication.class
+com\example\demo\controller\StudentController.class
