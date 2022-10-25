@@ -1,6 +1,9 @@
-com\example\demo\controller\Student.class
-com\example\demo\controller\Subject.class
-com\example\demo\controller\StudentRepository.class
-com\example\demo\controller\StudentService.class
+com\example\demo\controller\Services\StudentService.class
+com\example\demo\controller\Repos\StudentRepository.class
+com\example\demo\controller\Controller.class
+com\example\demo\controller\Repos\SubjectRepository.class
+com\example\demo\controller\Models\Student.class
+com\example\demo\controller\Models\Subject.class
+com\example\demo\controller\Models\Result.class
 com\example\demo\controller\SchoolSystemManagementApplication.class
-com\example\demo\controller\StudentController.class
+com\example\demo\controller\Services\SubjectService.class
