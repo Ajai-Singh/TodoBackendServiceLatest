@@ -1,9 +1,14 @@
-com\example\demo\controller\Services\StudentService.class
+com\example\demo\controller\DAOs\StudentDaoImpl.class
 com\example\demo\controller\Repos\StudentRepository.class
 com\example\demo\controller\Controller.class
 com\example\demo\controller\Repos\SubjectRepository.class
 com\example\demo\controller\Models\Student.class
 com\example\demo\controller\Models\Subject.class
+com\example\demo\controller\Repos\CustomSubjectRepo.class
+com\example\demo\controller\Services\StudentService.class
+com\example\demo\controller\DAOs\SubjectDaoImpl.class
+com\example\demo\controller\Models\Teacher.class
 com\example\demo\controller\Models\Result.class
+com\example\demo\controller\Repos\CustomStudentRepo.class
 com\example\demo\controller\SchoolSystemManagementApplication.class
 com\example\demo\controller\Services\SubjectService.class

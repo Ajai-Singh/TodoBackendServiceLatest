@@ -1,10 +1,16 @@
 package com.example.demo.controller.Models;
 
-import com.example.demo.controller.Models.Result;
-import com.example.demo.controller.Models.Subject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Id;
 import java.util.List;
 
 @Entity

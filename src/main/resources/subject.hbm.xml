@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "com.example.demo.controller.Models.Subject" table = "subjects">
+
+        <meta attribute = "class-description">
+            This class contains the subject details.
+        </meta>
+
+        <id name = "subjectID" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "subjectName" column = "subjectName" type = "string"/>
+        <property name = "teacherFirstName" column = "teachFirstName" type = "string"/>
+        <property name = "teacherLastName" column = "teachLastName" type = "string"/>
+        <property name = "subjectCode" column = "subjectCode" type = "string"/>
+        <property name = "noOfStudents" column = "noOfStudents" type = "int"/>
+
+    </class>
+</hibernate-mapping>

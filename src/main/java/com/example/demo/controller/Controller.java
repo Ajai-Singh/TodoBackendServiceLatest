@@ -7,7 +7,13 @@ import com.example.demo.controller.Services.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import java.util.List;
 
 @RestController
@@ -25,21 +31,25 @@ public class Controller {
         return new ResponseEntity<>("Student record was created successfully, Student id: " + student.getId(), HttpStatus.OK);
     }
 
+    @PostMapping("/createSubject")
+    public ResponseEntity<Object> createSubject(@RequestBody Subject subject) {
+        return new ResponseEntity<>(subjectService.save(subject), HttpStatus.OK);
+    }
+
     @DeleteMapping("/deleteStudent/{id}")
     public ResponseEntity<Object> deleteStudent(@PathVariable() Integer id) {
+        //TODO
         studentService.deleteById(id);
-
         return new ResponseEntity<>("Student record was deleted Successfully, Student id: " + id,HttpStatus.OK);
     }
 
     @GetMapping("/findStudentById/{id}")
-    public Student findStudentByd(@PathVariable() Integer id) {
-        return studentService.findById(id);
+    public ResponseEntity<Student> findStudentByd(@PathVariable() Integer id) {
+        return new ResponseEntity<>(studentService.findById(id), HttpStatus.OK);
     }
 
     @PutMapping("/updateStudentDetails/{id}")
     public void updateStudentDetails(@RequestBody() Student student, @PathVariable Integer id) {
-        student.setId(id);
         studentService.save(student);
     }
 
@@ -53,27 +63,9 @@ public class Controller {
         return studentService.getAllStudentsByClassName(className);
     }
 
-    @PutMapping("joinClass/{id}")
-    public String joinClass(@PathVariable() Integer id, @RequestBody Subject subject) {
-        Student student = studentService.findById(id);
-
-        student.setId(id);
-
-        if(student.getSubjects().size() >= 2) {
-            return student.getFirstName() + " " +student.getLastName() + " , timetable is full";
-        } else if(subject.getNoOfStudents() >= 5) {
-            return "Class is full sorry!";
-        } else {
-            subject.setSubjectID(subject.getSubjectID());
-            subject.setNoOfStudents(subject.getNoOfStudents() + 1);
-
-            subjectService.save(subject);
-
-            student.getSubjects().add(subject);
-
-            studentService.save(student);
-            return student.getFirstName() + " " +student.getLastName() + " has joined " + subject.getSubjectName();
-        }
-
+    @PutMapping("joinClassByClassId/{className}")
+    public String joinClass(@PathVariable() String className, @RequestBody Student student) {
+        //TODO
+        return studentService.joinClass(className, student);
     }
 }
