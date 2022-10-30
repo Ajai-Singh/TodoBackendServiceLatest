@@ -32,13 +32,16 @@ public class Controller {
     }
 
     @PostMapping("/createSubject")
-    public ResponseEntity<Object> createSubject(@RequestBody Subject subject) {
-        return new ResponseEntity<>(subjectService.save(subject), HttpStatus.OK);
+    public String createSubject(@RequestBody Subject subject) {
+        if(subject.getSubjectName().equalsIgnoreCase(subjectService.findByClassName(subject.getSubjectName()).getSubjectName())) {
+            return "Subject already exists!";
+        } else {
+            return subjectService.save(subject);
+        }
     }
 
     @DeleteMapping("/deleteStudent/{id}")
     public ResponseEntity<Object> deleteStudent(@PathVariable() Integer id) {
-        //TODO
         studentService.deleteById(id);
         return new ResponseEntity<>("Student record was deleted Successfully, Student id: " + id,HttpStatus.OK);
     }
@@ -53,6 +56,11 @@ public class Controller {
         studentService.save(student);
     }
 
+    @PutMapping("/updateSubjectDetails/{id}")
+    public String updateStudentDetails(@RequestBody() Subject subject, @PathVariable Integer id) {
+        return subjectService.save(subject);
+    }
+
     @GetMapping("viewStudentSubjects/{id}")
     public ResponseEntity<String> viewStudentSubjects(@PathVariable() Integer id) {
         return new ResponseEntity<>("Student subjects: " + studentService.findById(id).getSubjects().toString(), HttpStatus.OK);
@@ -63,9 +71,30 @@ public class Controller {
         return studentService.getAllStudentsByClassName(className);
     }
 
-    @PutMapping("joinClassByClassId/{className}")
+    @GetMapping("viewAllStudents")
+    public List<Student> viewAllStudentsByClassName() {
+        return studentService.findAllStudents();
+    }
+
+    @PutMapping("joinClass/{className}")
     public String joinClass(@PathVariable() String className, @RequestBody Student student) {
         //TODO
         return studentService.joinClass(className, student);
+    }
+
+    @PutMapping("dropClass/{className}")
+    public String dropClass(@PathVariable() String className, @RequestBody Student student) {
+        //TODO
+        return studentService.dropClass(className, student);
+    }
+
+    @GetMapping("ViewAllSubjectsAvailable")
+    public List<Subject> getAllSubjectsWithSpace() {
+        return subjectService.getAllSubjectsWithSpace();
+    }
+
+    @GetMapping("ViewAllSubjects")
+    public List<Subject> getAllSubjects() {
+        return subjectService.getAllSubjects();
     }
 }

@@ -2,12 +2,7 @@ package com.example.demo.controller.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "subjects")
@@ -15,7 +10,7 @@ import javax.persistence.GenerationType;
 public class Subject {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     @JsonProperty
     private int subjectID;
@@ -38,6 +33,9 @@ public class Subject {
 
     @Column(name = "noOfStudents")
     private int noOfStudents;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Student student;
 
     public Subject() {
 

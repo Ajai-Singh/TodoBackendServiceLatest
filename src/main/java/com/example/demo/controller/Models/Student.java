@@ -2,24 +2,16 @@ package com.example.demo.controller.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @JsonSerialize
-@Table(name = "Students")
+@Table(name = "students")
 public class Student {
     @Id
     @JsonProperty
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id",updatable = false, nullable = false)
     private int id;
 
@@ -31,7 +23,7 @@ public class Student {
     @Column(name = "lastName")
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private List<Subject> subjects;
 
     @Column(name = "address")
@@ -42,9 +34,6 @@ public class Student {
 
     @Column(name = "emergencyContactPhoneNumber")
     private String emergencyContactPhoneNumber;
-
-    @OneToOne
-    private Result result;
 
     public Student(String firstName, String lastName, List<Subject> subjects, String address, String emergencyContactName, String emergencyContactPhoneNumber) {
         this.firstName = firstName;
