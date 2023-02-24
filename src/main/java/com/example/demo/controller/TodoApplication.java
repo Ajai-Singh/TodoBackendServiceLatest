@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.controller.Models.Todo;
 import com.example.demo.controller.Repos.TodoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +16,10 @@ public class TodoApplication {
 	@Bean
 	CommandLineRunner init (TodoRepository todoRepository) {
 		return args -> {
-
+//			Todo todo = new Todo("maths");
+//			Todo todo1 = new Todo("english");
+//			todoRepository.save(todo);
+//			todoRepository.save(todo1);
 		};
 	}
 }

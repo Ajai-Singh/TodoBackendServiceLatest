@@ -15,8 +15,16 @@ public class Todo {
     @JsonProperty
     private int id;
 
+    @Column(name = "description")
+    @JsonProperty
+    private String description;
+
     public Todo() {
 
+    }
+
+    public Todo(String description) {
+        this.description = description;
     }
 
     public Todo(int id) {
@@ -29,5 +37,13 @@ public class Todo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
