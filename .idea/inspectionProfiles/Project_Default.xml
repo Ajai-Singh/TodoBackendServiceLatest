@@ -1482,14 +1482,14 @@
     <inspection_tool class="JpaAttributeMemberSignatureInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaAttributeTypeInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaConfigDomFacetInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="JpaDataSourceORMDomInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JpaDataSourceORMDomInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="JpaDataSourceORMInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="JpaDomInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaEntityListenerInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaEntityListenerWarningsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="JpaMissingIdInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaModelReferenceInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="JpaORMDomInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JpaORMDomInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="JpaObjectClassSignatureInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaQlInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="JpaQueryApiInspection" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -2359,7 +2359,7 @@
     <inspection_tool class="SqlMissingReturnInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="SqlMultipleLimitClausesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlNamedArgumentsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="SqlNoDataSourceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SqlNullComparisonInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlRedundantAliasInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlRedundantCodeInCoalesceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -2370,7 +2370,7 @@
     <inspection_tool class="SqlShouldBeInGroupByInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlSideEffectsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlSignatureInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="SqlStorageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlStorageInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SqlStringLengthExceededInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlTransactionStatementInTriggerInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SqlTriggerTransitionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -2807,6 +2807,18 @@
           <list size="0" />
         </value>
       </option>
+    </inspection_tool>
+    <inspection_tool class="unused" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="LOCAL_VARIABLE" value="true" />
+      <option name="FIELD" value="true" />
+      <option name="METHOD" value="true" />
+      <option name="CLASS" value="true" />
+      <option name="PARAMETER" value="true" />
+      <option name="REPORT_PARAMETER_FOR_PUBLIC_METHODS" value="true" />
+      <option name="ADD_MAINS_TO_ENTRIES" value="true" />
+      <option name="ADD_APPLET_TO_ENTRIES" value="true" />
+      <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
+      <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
     </inspection_tool>
   </profile>
 </component>

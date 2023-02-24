@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="user@localhost">
+<dataSource name="todo@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.19">
     <root id="1">
       <ServerVersion>8.0.21</ServerVersion>
@@ -35,10 +35,10 @@
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="11" parent="1" name="todo">
+      <Current>1</Current>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="12" parent="1" name="user">
-      <Current>1</Current>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="13" parent="1" name="world">
@@ -930,137 +930,5 @@ SELECT|sys.sys_config:null
       <ObjectGrants>ALL PRIVILEGES|db_example:null
 </ObjectGrants>
     </user>
-    <table id="291" parent="12" name="hibernate_sequence">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="292" parent="12" name="results">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="293" parent="12" name="students">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="294" parent="12" name="students_subjects">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="295" parent="12" name="subjects">
-      <Engine>MyISAM</Engine>
-    </table>
-    <table id="296" parent="12" name="todos">
-      <Engine>MyISAM</Engine>
-    </table>
-    <column id="297" parent="291" name="next_val">
-      <Position>1</Position>
-      <DataType>bigint|0s</DataType>
-    </column>
-    <column id="298" parent="292" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="299" parent="292" name="averageResult">
-      <Position>2</Position>
-      <DataType>double|0s</DataType>
-    </column>
-    <key id="300" parent="292" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="301" parent="293" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="302" parent="293" name="address">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="303" parent="293" name="emergencyContactName">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="304" parent="293" name="emergencyContactPhoneNumber">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="305" parent="293" name="firstName">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="306" parent="293" name="lastName">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <key id="307" parent="293" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="308" parent="294" name="Student_id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="309" parent="294" name="subjects_id">
-      <Position>2</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="310" parent="294" name="FKettnlynt03t8aky2d9bx4e4nx">
-      <ColNames>Student_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="311" parent="294" name="FK2pm1dsehrlqa1smxrki4f9nl3">
-      <ColNames>subjects_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <column id="312" parent="295" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="313" parent="295" name="noOfStudents">
-      <Position>2</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="314" parent="295" name="subjectCode">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="315" parent="295" name="subjectName">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="316" parent="295" name="teachFirstName">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="317" parent="295" name="teachLastName">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="318" parent="295" name="student_id">
-      <Position>7</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <index id="319" parent="295" name="FKhyfrm3h9qjhvly6vcqh311gq7">
-      <ColNames>student_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="320" parent="295" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="321" parent="296" name="id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="322" parent="296" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
   </database-model>
 </dataSource>

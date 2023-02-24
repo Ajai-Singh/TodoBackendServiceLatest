@@ -15,7 +15,7 @@
     <!-- Assume test is the database name -->
 
     <property name = "hibernate.connection.url">
-      jdbc:mysql://localhost:3306/user
+      jdbc:mysql://localhost:3306/todo
     </property>
 
     <property name = "hibernate.connection.username">
@@ -29,8 +29,7 @@
     <property name="hibernate.current_session_context_class">thread</property>
 
     <!-- List of XML mapping files -->
-    <mapping resource = "subject.hbm.xml"/>
-    <mapping resource = "student.hbm.xml"/>
+    <mapping resource = "todo.hbm.xml"/>
 
   </session-factory>
 </hibernate-configuration>
