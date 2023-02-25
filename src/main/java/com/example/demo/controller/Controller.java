@@ -15,8 +15,8 @@ public class Controller implements ControllerInterface {
     private TodoServiceImpl todoService;
 
     @Override
-    public List<Todo> getAllTodos() {
-        return todoService.getTodos();
+    public List<Todo> getAllTodos(String userName) {
+        return todoService.getTodos(userName);
     }
 
     @Override
@@ -32,6 +32,16 @@ public class Controller implements ControllerInterface {
     @Override
     public void deleteTodo(Todo todo) {
         todoService.deleteTodo(todo);
+    }
+
+    @Override
+    public void deleteTodoById(int id) {
+        todoService.deleteById(id);
+    }
+
+    @Override
+    public Todo getTodo(int id) {
+        return todoService.getTodo(id);
     }
 
     @Override
