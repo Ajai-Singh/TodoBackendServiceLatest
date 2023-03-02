@@ -10,6 +10,13 @@ import java.util.List;
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class Controller implements ControllerInterface {
+    //Spring security is a form based authentication
+    //When user name and pass is entered a session cookie is set
+    //For interview you can use this as basic form validation for API
+    //User name default is 'user'
+    //pass gets printed in the logs
+    //the cookie gets passed in with every request
+
 
     @Autowired
     private TodoServiceImpl todoService;
