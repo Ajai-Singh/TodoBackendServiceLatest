@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerAdapter{
 
+    //Allows UI to hit api and allow all options requests
+    //Spring security configuration
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
